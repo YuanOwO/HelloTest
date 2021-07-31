@@ -1,4 +1,3 @@
-// var path = require("path")
 var urls;
 function loadUrls() {
     var xhr = new XMLHttpRequest();
@@ -13,17 +12,12 @@ function randomLocatoin() {
 }
 function loadArticles(index) {
     var xhr = new XMLHttpRequest();
-    index = Math.floor(Math.random() * index)
-    var path = '/assets/article/' + index + '.txt'
-    console.log(path)
+    index = Math.floor(Math.random() * index);
+    var path = '/assets/article/' + index + '.html';
     xhr.open('get', path);
     xhr.send();
     xhr.onload = function() {
-        article = xhr.responseText;
-        console.log(article)
+        var article = xhr.responseText;
         document.getElementById('ariticle').innerText = article;
-        if (!index) {
-            document.getElementById('ariticleInfo').remove()
-        }
     }
 }
