@@ -44,7 +44,7 @@
         urlXhr.open('get', '/assets/urls.json');
         urlXhr.send();
         urlXhr.onload = function() {
-            urls = JSON.parse(urlXhr.responseText);
+            urls = JSON.parse(urlXhr.responseText).urls;
         }
         function goRandomUrl() {
             location = urls[Math.floor(Math.random() * urls.length)]
