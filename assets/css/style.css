@@ -1,0 +1,35 @@
+body {
+    font-family: Arial;
+    margin:0px
+}
+
+main {
+    width: 1200px;
+    margin: 0px auto; margin-bottom: 20px;
+}
+#hello {
+    font-size: 300px; text-align:center;
+}
+#ariticle {
+    width: 75em;
+    margin-top: 10px; margin-bottom: 10px;
+}
+
+footer {
+    width: 1200px;
+    margin: 40px auto; padding: 50px;
+    color: #777777;
+    border-top: 1px solid #eeeeee;
+}
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+
+@media (max-width: 1200px) {
+    main, footer {width: 95%;}
+    #hello {font-size: 140px;}
+    #ariticle {width: 100%;}
+}
