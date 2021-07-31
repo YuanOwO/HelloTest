@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="uft-8">
     <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.svg" />
     <title>Hello World!</title>
     <meta name="title" content="Hello World! /">
@@ -16,40 +16,67 @@
     <meta property="og:imgage:type" content="image/png" />
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         body {
             font-family: Arial;
         }
-        #time {
-            font-size: 50px;
+        main {
+            width: 1200px;
+            margin: 0px auto;
+        }
+        #hello {
+            font-size: 300px; text-align:center;
+        }
+        #ariticle {
+            width: 75em;
+            margin-top: 10px;
+        }
+        @media screen and (max-width: 1200px) {
+            main {width: 95%;}
+            #hello {font-size: 140px;}
+            #ariticle {width: 100%;}
         }
     </style>
-    <script type="text/javascript">
-    var urls;
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', '/assets/urls.json');
-    xhr.send();
-
-    xhr.onload = function() {
-        urls = JSON.parse( xhr.responseText).urls;
-    }
-    function goRandomUrl() {
-        window.location = urls[Math.floor(Math.random() * urls.length)]
-    }
-    var time = 0;
-    function show() {
-        if (time == 3) {
-            goRandomUrl()
+    <script>
+        var urls;
+        var urlXhr = new XMLHttpRequest();
+        urlXhr.open('get', '/assets/urls.json');
+        urlXhr.send();
+        urlXhr.onload = function() {
+            urls = JSON.parse(urlXhr.responseText);
         }
-        time++;
-        var date = new Date();
-        var now = "現在時間 " + date.toLocaleString();
-        document.getElementById("time").innerHTML = now;
-        setTimeout("show()", 1000);
-    }
+        function goRandomUrl() {
+            location = urls[Math.floor(Math.random() * urls.length)]
+        }
+        var time = 0;
+        function show() {
+            if (time == 3) {
+                goRandomUrl()
+            }
+            time++;
+            var date = new Date();
+            var now = "現在時間 " + date.toLocaleString();
+            document.getElementById("time").innerHTML = now;
+            setTimeout("show()", 1000);
+        }
+        
+        function onload() {
+            show();
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', '/assets/article.txt');
+            xhr.send();
+            xhr.onload = function() {
+                article = xhr.responseText;
+                document.getElementById('ariticle').innerText = article;
+            }
+        }
     </script>
 </head>
-<body onclick="goRandomUrl()" onload="show()">
-    <div style="font-size: 300px; text-align:center;">Hello World!</div>
-    <div id="time"></div>
+<body onclick="goRandomUrl()" onload="onload()">
+    <main>
+        <div id="hello">Hello</div>
+        <time id="time"></time>
+        <article id="ariticle"></article>
+    </main>
 </body>
