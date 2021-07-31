@@ -17,66 +17,36 @@
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-        body {
-            font-family: Arial;
-        }
-        main {
-            width: 1200px;
-            margin: 0px auto;
-        }
-        #hello {
-            font-size: 300px; text-align:center;
-        }
-        #ariticle {
-            width: 75em;
-            margin-top: 10px;
-        }
-        @media screen and (max-width: 1200px) {
-            main {width: 95%;}
-            #hello {font-size: 140px;}
-            #ariticle {width: 100%;}
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <script src="script/random.js"></script>
     <script>
-        var urls;
-        var urlXhr = new XMLHttpRequest();
-        urlXhr.open('get', '/assets/urls.json');
-        urlXhr.send();
-        urlXhr.onload = function() {
-            urls = JSON.parse(urlXhr.responseText).urls;
-        }
-        function goRandomUrl() {
-            location = urls[Math.floor(Math.random() * urls.length)]
-        }
         var time = 0;
         function show() {
-            if (time == 3) {
-                goRandomUrl()
+            if (time == 2) {
+                // randomLocatoin();
             }
             time++;
-            var date = new Date();
-            var now = "現在時間 " + date.toLocaleString();
-            document.getElementById("time").innerHTML = now;
+            var now = new Date();
+            document.getElementById("time").innerHTML = "現在時間 " + now.toLocaleString();
             setTimeout("show()", 1000);
         }
-        
-        function onload() {
+        window.onload = function() {
             show();
-            var xhr = new XMLHttpRequest();
-            xhr.open('get', '/assets/article.txt');
-            xhr.send();
-            xhr.onload = function() {
-                article = xhr.responseText;
-                document.getElementById('ariticle').innerText = article;
-            }
+            loadUrls();
+            loadArticles(10);
+            document.body.addEventListener("click", randomLocatoin)
         }
     </script>
 </head>
-<body onclick="goRandomUrl()" onload="onload()">
+<body>
     <main>
         <div id="hello">Hello</div>
         <time id="time"></time>
         <article id="ariticle"></article>
+        <p id="ariticleInfo">文章由<a href="https://gadget.chienwen.net/x/text/garbagearticle" target="_blank" title="廢文生產器">好用工具箱</a>提供</p>
     </main>
+    <footer>
+        <div class="left">© 2021 Jimmy.</div>
+        <div class="right"><a href="javascript: window.scrollTo(0, 0)", title="回到最上面">TOP</a></div>
+    </footer>
 </body>
