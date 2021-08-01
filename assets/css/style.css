@@ -1,25 +1,30 @@
 body {
-    font-family: Arial;
+    font-family: Arial; font-size: 16px;
     margin:0px
 }
 
 main {
     width: 1200px;
+    word-wrap: break-word;
     margin: 0px auto; margin-bottom: 20px;
 }
 #hello {
-    font-size: 300px; text-align:center;
+    font-size: 20em; text-align:center;
 }
-#ariticle {
-    width: 75em;
-    margin-top: 10px; margin-bottom: 10px;
+#ariticle p {
+    text-indent: 2em;
+    margin-bottom: 2em;
 }
 
 footer {
     width: 1200px;
-    margin: 40px auto; padding: 50px;
+    margin: 0px auto;
+    margin-top: 40px; margin-bottom: 20px;
     color: #777777;
     border-top: 1px solid #eeeeee;
+}
+footer div {
+    margin: 50px;
 }
 .right {
     float: right;
@@ -29,7 +34,15 @@ footer {
 }
 
 @media (max-width: 1200px) {
-    main, footer {width: 95%;}
-    #hello {font-size: 140px;}
-    #ariticle {width: 100%;}
+    main, footer {width: 90%;}
+    #hello {font-size: 10em;}
+}
+
+@media (max-width: 600px) {
+    #hello {font-size: 5em;}
+    footer div {margin: 30px;}
+}
+
+@media (max-width: 300px) {
+    #hello {font-size: 2em;}
 }
