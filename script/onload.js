@@ -24,7 +24,7 @@ function now(format) {
 var time = 0;
 function show() {
     if (time == 2) {
-        // randomLocatoin();
+        randomLocatoin();
     }
     time++;
     var str = "現在時間 " + now('%Y/%m/%d %H:%M:%S') + '<br / >' + Date();
