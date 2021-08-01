@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="uft-8">
+    <meta charset="uft-8" />
     <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.svg" />
     <title>Hello World!</title>
-    <meta name="title" content="Hello World! /">
-    <meta name="descripttion" content="Hello World!" />
-    <meta property="og:type" content="object" />
-    <meta property="og:site_name" content="Hello World!" />
-    <meta property="og:title" content="Hello World!" />
-    <meta property="og:descripttion" content="Hello World!" />
-    <meta property="og:url" content="https://hello.hijimmy.tk/" />
-    <meta property="og:image" content="https://github.com/fluidicon.png" />
-    <meta property="og:image:alt" content="Hello World!" />
-    <meta property="og:imgage:type" content="image/png" />
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta name="title"               content="Hello World!" />
+    <meta name="descripttion"        content="Hello!" />
+    <meta property="og:type"         content="object" />
+    <meta property="og:site_name"    content="Hello World!" />
+    <meta property="og:title"        content="Hello World!" />
+    <meta property="og:descripttion" content="Hello!" />
+    <meta property="og:url"          content="https://hello.hijimmy.tk/" />
+    <meta property="og:image"        content="https://github.com/fluidicon.png" />
+    <meta property="og:image:alt"    content="Hello World!" />
+    <meta property="og:imgage:type"  content="image/png" />
+    <meta property="og:image:width"  content="512" />
+    <meta property="og:image:height" content="512" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <script src="script/random.js"></script>
-    <script>
-        var time = 0;
-        function show() {
-            if (time == 2) {
-                // randomLocatoin();
-            }
-            time++;
-            var now = new Date();
-            document.getElementById("time").innerHTML = "現在時間 " + now.toLocaleString();
-            setTimeout("show()", 1000);
-        }
-        window.onload = function() {
-            show();
-            loadUrls();
-            loadArticles(10);
-            document.body.addEventListener("click", randomLocatoin)
-        }
-    </script>
+    <script src="script/onload.js"></script>
 </head>
 <body>
     <main>
         <div id="hello">Hello</div>
         <time id="time"></time>
-        <article id="ariticle"></article>
-        <p id="ariticleInfo">文章由<a href="https://gadget.chienwen.net/x/text/garbagearticle" target="_blank" title="廢文生產器">好用工具箱</a>提供</p>
+        <article id="ariticle">awa</article>
     </main>
     <footer>
         <div class="left">© 2021 Jimmy.</div>
