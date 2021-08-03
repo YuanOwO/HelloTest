@@ -16,6 +16,9 @@ function loadArticles(index) {
     var xhr = new XMLHttpRequest();
     index = Math.floor(Math.random() * index)
     var path = '/assets/articles/' + index + '.html'
+    if (index == 5) {
+        document.body.removeEventListener('click', randomLocatoin);
+    }
     xhr.open('get', path);
     xhr.send();
     xhr.onload = function() {
