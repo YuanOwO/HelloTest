@@ -20,15 +20,51 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <script src="script/random.js"></script>
     <script src="script/onload.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </head>
-<body>
-    <main>
-        <div id="hello">Hello</div>
-        <time id="time"></time>
-        <article id="ariticle">awa</article>
+<body onload="indexOnload();">
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-md">
+            <a class="navbar-brand" href="/">
+                Hello!
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link", href="/about.html">關於</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container-md mb-5">
+        <h1 class="h1 text-center" id="hello">Hello</h1>
+        <p>現在時間：<span id="time"></span></p>
+        <article id="ariticle"><p>awa</p></article>
     </main>
     <footer>
-        <div class="left">© 2021 Jimmy.</div>
-        <div class="right"><a href="javascript: window.scrollTo(0, 0)", title="回到最上面">TOP</a></div>
+        <div class="container-md py-4 border-top">
+            <div class="row justify-content-between">
+                <div class="col col-6">
+                    <p>
+                        &copy; 2021 Jimmy.
+                        <br>
+                        Theme is supported by <a href="https://getbootstrap.com/">Bootstrap</a>
+                    </p>
+                </div>
+                <div class="col col-1">
+                    <p><a href="#" title="回到最上面">TOP</a></p>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
