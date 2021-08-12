@@ -22,7 +22,7 @@ function indexOnload() {
     loadUrls();
     loadArticles(10);
     setInterval(function() {
-        if (time == 2) {
+        if (time == 3) {
             randomLocatoin();
         }
     })
