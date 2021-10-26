@@ -11,7 +11,7 @@ function now(format) {
 }
 
 function randomLocate() {
-    location.href = './random.html';
+    location.href = '/random.html';
 }
 
 var time = 0;
